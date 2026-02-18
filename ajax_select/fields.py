@@ -11,7 +11,7 @@ from django.db.models import Model
 from django.forms.utils import flatatt
 from django.template.defaultfilters import force_escape
 from django.template.loader import render_to_string
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.module_loading import import_string
 from django.utils.safestring import mark_safe
 
@@ -275,7 +275,7 @@ class AutoCompleteSelectMultipleField(forms.fields.CharField):
             # '' will cause translation to fail
             # should be ''
             if isinstance(help_text, str):
-                help_text = force_text(help_text)
+                help_text = force_str(help_text)
             # django admin appends "Hold down "Control",..." to the help text
             # regardless of which widget is used. so even when you specify an
             # explicit help text it appends this other default text onto the end.

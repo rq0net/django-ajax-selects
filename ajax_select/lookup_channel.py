@@ -1,5 +1,5 @@
 from django.core.exceptions import PermissionDenied
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.html import escape
 
 
@@ -60,7 +60,7 @@ class LookupChannel(object):
         Returns:
             str: The object as string
         """
-        return escape(force_text(obj))
+        return escape(force_str(obj))
 
     def format_match(self, obj):
         """
@@ -71,7 +71,7 @@ class LookupChannel(object):
         Returns:
             str: formatted string, may contain HTML.
         """
-        return escape(force_text(obj))
+        return escape(force_str(obj))
 
     def format_item_display(self, obj):
         """
@@ -82,7 +82,7 @@ class LookupChannel(object):
         Returns:
             str: formatted string, may contain HTML.
         """
-        return escape(force_text(obj))
+        return escape(force_str(obj))
 
     def get_objects(self, ids):
         """
